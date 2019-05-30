@@ -35,7 +35,7 @@ export const mainListItems = (
       </ListItemIcon>
       <ListItemText primary="Users" />
     </ListItem>
-    <Link to="/admin/allquestion">
+    <Link to="/admin/quizsection">
     <ListItem button>
       <ListItemIcon>
         <AssessmentIcon />

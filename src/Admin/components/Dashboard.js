@@ -19,6 +19,7 @@ import ChevronLeftIcon from "@material-ui/icons/ChevronLeft";
 import { BrowserRouter as Router, Route, Link ,Switch} from "react-router-dom";
 import AccountBoxIcon from "@material-ui/icons/AccountBox";
 import { mainListItems} from './ListItem';
+import AddQuestion from './Quiz/AddQuestion'
 
 import Questions from "./Quiz/QuizQuestions";
 const drawerWidth = 240;
@@ -167,8 +168,9 @@ export default function Dashboard() {
       <main className={classes.main}>
         
               <Switch>
-              <Route exact path="/admin/allquestion" component={QuizSection} />
-              <Route exact path="/admin/quizzes/" component={Questions} />
+              <Route exact path="/admin/quizsection" component={QuizSection} />
+              <Route exact path="/admin/quizzes/allquestions" component={Questions} />
+              <Route exact path="/admin/quizzes/addquiz" component={AddQuestion} />
 
               <Route  exact path="/courses/"  component={()=>"Hi"} />
             
