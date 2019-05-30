@@ -1,26 +1,36 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
+import Dashboard from './Admin/components/Dashboard'
+import {fetchData} from './Admin/actions/actions'
+import { BrowserRouter as Router, Route, Link ,Switch} from "react-router-dom";
+import {connect} from 'react-redux'
+import {  bindActionCreators } from 'redux';
+import Questions from './Admin/components/Quiz';
 
-function App() {
+class App extends React.Component {
+  componentDidMount(){
+    console.log("Hi")
+  
+    this.props.fetchData()
+  }
+  render(){
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+   <Router>
+     
+     <Dashboard/>
+     </Router>
   );
 }
+}
+// const mapDispatchToProps = dispatch => {
+//   return {
+//     fetchData
+//   }
+// }
 
-export default App;
+const mapDispatchToProps = dispatch => bindActionCreators({
+  fetchData
+},dispatch)
+
+
+export default connect(null, mapDispatchToProps)(App);
