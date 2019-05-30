@@ -5,7 +5,7 @@ import {fetchData} from './Admin/actions/actions'
 import { BrowserRouter as Router, Route, Link ,Switch} from "react-router-dom";
 import {connect} from 'react-redux'
 import {  bindActionCreators } from 'redux';
-import Questions from './Admin/components/Quiz';
+
 
 class App extends React.Component {
   componentDidMount(){

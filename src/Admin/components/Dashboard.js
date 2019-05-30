@@ -13,14 +13,14 @@ import Badge from "@material-ui/core/Badge";
 import Container from "@material-ui/core/Container";
 import Grid from "@material-ui/core/Grid";
 import Paper from "@material-ui/core/Paper";
-
+import QuizSection from './Quiz/QuizSelect'
 import MenuIcon from "@material-ui/icons/Menu";
 import ChevronLeftIcon from "@material-ui/icons/ChevronLeft";
 import { BrowserRouter as Router, Route, Link ,Switch} from "react-router-dom";
 import AccountBoxIcon from "@material-ui/icons/AccountBox";
 import { mainListItems} from './ListItem';
 
-import Questions from "./Quiz";
+import Questions from "./Quiz/QuizQuestions";
 const drawerWidth = 240;
 
 const useStyles = makeStyles(theme => ({
@@ -167,7 +167,9 @@ export default function Dashboard() {
       <main className={classes.main}>
         
               <Switch>
+              <Route exact path="/admin/allquestion" component={QuizSection} />
               <Route exact path="/admin/quizzes/" component={Questions} />
+
               <Route  exact path="/courses/"  component={()=>"Hi"} />
             
              </Switch>
