@@ -99,7 +99,8 @@ class AddQuestion extends React.Component {
     await axios
       .post("http://localhost:3001/create", { data })
       .then(function(response) {
-        this.props.history.push("/");
+        console.log(this.props.history);
+        this.props.history.push("/admin/quizsection");
         console.log(response);
       })
       .catch(function(error) {
